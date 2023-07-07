@@ -31,7 +31,31 @@ class MoneyManager extends Component {
   }
 
   onDelete = idPassed => {
-    console.log(idPassed)
+    const {tList} = this.state
+
+    const target = tList.find(each => each.id === idPassed)
+    const {title, id, amount, type} = target
+    let newAmount = amount
+
+    if (type === 'INCOME') {
+      newAmount = amount * -1
+
+      this.setState(pre => ({
+        tList: pre.tList.filter(each => each.id !== idPassed),
+        inc: pre.inc + newAmount,
+        bal: pre.bal + newAmount,
+      }))
+    } else {
+      this.setState(pre => ({
+        tList: pre.tList.filter(each => each.id !== idPassed),
+      }))
+    }
+
+    this.setState(pre => ({
+      tList: pre.tList.filter(each => each.id !== idPassed),
+      inc: pre.inc - newAmount,
+      bal: pre.bal - newAmount,
+    }))
   }
 
   addToHistory = () => {
@@ -76,7 +100,7 @@ class MoneyManager extends Component {
 
   nameChange = event => {
     const name = event.target.value
-    console.log(name)
+
     this.setState(pre => ({...pre, name}))
   }
 
@@ -107,7 +131,7 @@ class MoneyManager extends Component {
           <div className="heding">
             <h1>Hi, Richard</h1>
             <p>
-              Welcome back to <span>Money Maneger</span>
+              Welcome back to your<span>Money Maneger</span>
             </p>
           </div>
           <div className="tab">
