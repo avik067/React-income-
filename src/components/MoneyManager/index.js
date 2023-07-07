@@ -34,28 +34,25 @@ class MoneyManager extends Component {
     const {tList} = this.state
 
     const target = tList.find(each => each.id === idPassed)
-    const {title, id, amount, type} = target
-    let newAmount = amount
-
-    if (type === 'INCOME') {
-      newAmount = amount * -1
-
+    const {title, id, amount, type, optionId} = target
+    console.log(optionId)
+    const t = typeof amount
+    console.log(t)
+    if (optionId === 'INCOME') {
       this.setState(pre => ({
+        ...pre,
         tList: pre.tList.filter(each => each.id !== idPassed),
-        inc: pre.inc + newAmount,
-        bal: pre.bal + newAmount,
+        inc: pre.inc - amount,
+        bal: pre.bal - amount,
       }))
     } else {
       this.setState(pre => ({
+        ...pre,
         tList: pre.tList.filter(each => each.id !== idPassed),
+        ex: pre.ex - amount,
+        bal: pre.bal + amount,
       }))
     }
-
-    this.setState(pre => ({
-      tList: pre.tList.filter(each => each.id !== idPassed),
-      inc: pre.inc - newAmount,
-      bal: pre.bal - newAmount,
-    }))
   }
 
   addToHistory = () => {
@@ -66,9 +63,11 @@ class MoneyManager extends Component {
     }
     const typeFind = transactionTypeOptions.find(each => each.optionId === type)
     const foundType = typeFind.displayText
+    const foundTypeId = typeFind.optionId
     let newBal
     let newInc
     let newEx
+
     if (type === 'INCOME') {
       newBal = bal + amount
       newInc = inc + amount
@@ -85,6 +84,7 @@ class MoneyManager extends Component {
       title: name,
       amount,
       type: foundType,
+      optionId: foundTypeId,
     }
 
     this.setState(pre => ({
