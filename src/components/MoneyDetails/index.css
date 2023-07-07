@@ -1,0 +1,20 @@
+/* Write your CSS here */
+
+.tab-b {
+  background-color: #ecfccb;
+  padding: 2px;
+  margin: 5px;
+  border-radius: 5px;
+}
+.tab-i {
+  background-color: #cffafe;
+  padding: 2px;
+  margin: 5px;
+  border-radius: 5px;
+}
+.tab-e {
+  background-color: #ede9fe;
+  padding: 2px;
+  margin: 5px;
+  border-radius: 5px;
+}

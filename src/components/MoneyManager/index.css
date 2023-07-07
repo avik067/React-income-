@@ -1,0 +1,70 @@
+/* Write your CSS here */
+
+.main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.heding {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/money-manager/money-manager-bg.png');
+  padding: 10px;
+  height: 15%;
+  background-size: span;
+}
+.icon {
+  height: 40px;
+  margin: 10px;
+}
+.tab {
+  height: 20%;
+}
+.lower {
+  height: 60%;
+}
+.row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+span {
+  color: #0b69ff;
+}
+p {
+  font-size: 10px;
+  font-weight: 800;
+  margin: 10px;
+  flex-grow: 1;
+}
+.form {
+  border: 1px solid #cbd5e1;
+  padding: 10px;
+}
+.history {
+  padding-left: 10px;
+  border: 1px solid #cbd5e1;
+  flex-grow: 1;
+}
+.vertical {
+  height: 10px;
+  width: 1px;
+  color: #cbd5e1;
+}
+.history-index {
+  border: 2px solid #cbd5e1;
+  padding-right: 0px;
+}
+ul {
+  padding: 0px;
+}
+li {
+  list-style: none;
+}

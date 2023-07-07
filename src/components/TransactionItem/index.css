@@ -1,0 +1,16 @@
+/* Write your CSS here */
+
+.transaction-result {
+  width: 30%;
+}
+
+.d-button {
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: hover;
+}
+img {
+  height: 20px;
+}
