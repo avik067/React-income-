@@ -129,16 +129,14 @@ class MoneyManager extends Component {
       <div className="main">
         <div>
           <div className="heding">
-            <h1>Hi, Richard</h1>
+            <h1>Hi, User</h1>
             <p>
               Welcome back to your<span>Money Maneger</span>
             </p>
           </div>
-          <div className="tab">
-            <MoneyDetails bal={bal} inc={inc} ex={ex} />
-          </div>
-          <div className="lower row">
-            <form className="form ">
+          <MoneyDetails bal={bal} inc={inc} ex={ex} />
+          <div className="lower">
+            <form className="form">
               <h4>Add Transaction</h4>
               <label htmlFor="title">Title</label>
               <br />
