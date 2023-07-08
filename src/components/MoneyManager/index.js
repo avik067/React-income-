@@ -184,6 +184,7 @@ class MoneyManager extends Component {
                   <p>Title</p>
                   <p>Amount</p>
                   <p>Type</p>
+                  <p>{'   '}</p>
                 </li>
                 {tList.map(eachT => (
                   <TransactionItem
